@@ -1,0 +1,22 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "startup webpack",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yushengyuan1993/webpack.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "582718643@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yushengyuan1993/webpack/issues"
+  },
+  "homepage": "https://github.com/yushengyuan1993/webpack#readme"
+}
