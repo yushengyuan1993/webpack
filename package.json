@@ -23,6 +23,7 @@
   "homepage": "https://github.com/yushengyuan1993/webpack#readme",
   "devDependencies": {
     "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   }
 }
