@@ -1,3 +1,3 @@
-export default function greeter () {
-  console.log('hello');
-}
+import time from './components/time';
+
+time();
