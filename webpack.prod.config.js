@@ -2,16 +2,18 @@
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin =  require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   // devtool: 'eval-source-map',
-  devtool: 'source-map',
+  // devtool: 'source-map',
   entry: {
-    app: './src/index.js',
-    // test: './src/index.js'
+    app: './src/index.js'
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'app.[hash].js',
     // filename: '[name].js',
     path: __dirname + '/dist',
     // publicPath: __dirname + '/static'
@@ -39,7 +41,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[path][name]__[local]--[hash:base64:5]'
+              localIdentName: '[name].[hash:5]',
             }
           },
           {
@@ -54,12 +56,31 @@ module.exports = {
     new webpack.BannerPlugin('ooops!'),
     new HtmlWebpackPlugin({
       template: __dirname + '/src/index.html'
-    })    
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new ExtractTextPlugin('module.css'),
+    new webpack.HotModuleReplacementPlugin(), //热加载插件
+    new CleanWebpackPlugin({ // 清除build后的残余文件
+      root: __dirname,
+      dry: false,
+      verbose: true
+    })
   ],
+
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          compress: false
+        }
+      })
+    ]
+  },
 
   devServer: {
     contentBase: './',
     historyApiFallback: true,
-    inline: true
+    inline: true,
+    hot: true
   }
 }

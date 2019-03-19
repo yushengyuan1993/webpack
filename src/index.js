@@ -1,3 +1,5 @@
-import time from './components/time';
+import time from './script/time';
+import sayhello from './script/module';
 
 time();
+sayhello();
