@@ -3,3 +3,5 @@ import sayhello from './script/module';
 
 time();
 sayhello();
+
+console.log('I get called from index.js!');
