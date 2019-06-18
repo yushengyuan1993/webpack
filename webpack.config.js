@@ -1,9 +1,11 @@
 'use strict'
 
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin =  require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   // devtool: 'eval-source-map',
   devtool: 'source-map',
   entry: {
@@ -13,8 +15,8 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     // filename: '[name].js',
-    path: __dirname + '/dist',
-    // publicPath: __dirname + '/static'
+    path: path.resolve(__dirname, 'dist'),
+    // publicPath: path.resolve(__dirname, 'static')
   },
 
   module: {

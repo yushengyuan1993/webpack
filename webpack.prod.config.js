@@ -7,6 +7,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
+  mode: 'production',
   // devtool: 'eval-source-map',
   // devtool: 'source-map',
   entry: {
