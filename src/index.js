@@ -1,5 +1,5 @@
-import time from './script/time';
-import sayhello from './script/module';
+import time from './assets/js/time';
+import sayhello from './assets/js/module';
 
 time();
 sayhello();

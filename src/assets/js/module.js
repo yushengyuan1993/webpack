@@ -1,5 +1,5 @@
-import data from '../../static/json/data.json';
-import module from '../style/module.css';
+import data from '../../../static/json/data.json';
+import module from '../css/module.css';
 
 export default () => {
   let el = document.createElement('div');
