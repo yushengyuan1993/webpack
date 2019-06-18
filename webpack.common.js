@@ -1,3 +1,5 @@
+// webpack 的通用基本配置
+
 // const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -13,6 +15,7 @@ module.exports = {
   // },
   plugins: [
     new webpack.BannerPlugin('ooops!'),
+    new webpack.HotModuleReplacementPlugin(), // 模块热替换
     new CleanWebpackPlugin({ // 清除build后的残余文件
       root: __dirname,
       dry: false,
