@@ -12,12 +12,12 @@ module.exports = merge(common, {
   output: {
     filename: '[name].prod.[hash].js',
     path: path.resolve(__dirname, 'dist'),
-    // publicPath: path.resolve(__dirname, 'assets')
+    // publicPath: path.resolve(__dirname, 'dist')
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new ExtractTextPlugin({
       filename: '[name].prod.[hash].css'
     })
-  ]
+  ],
 });
