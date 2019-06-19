@@ -3,7 +3,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const common = require('./webpack.common.js'); // 合并webpack配置
 
@@ -19,14 +19,5 @@ module.exports = merge(common, {
     new ExtractTextPlugin({
       filename: '[name].prod.[hash].css'
     })
-  ],
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        uglifyOptions: {
-          compress: false
-        }
-      })
-    ]
-  },
+  ]
 });
